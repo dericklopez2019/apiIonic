@@ -12,7 +12,7 @@
   </ion-header>
   <ion-button color="secondary" (click)="goToInicio()">Inicio</ion-button>
   
-    <form [formGroup]="cliente" (ngSubmit)="guardarDatos()">
+    <form [formGroup]="formCliente" (ngSubmit)="guardarDatos()">
       <ion-item>
         <ion-label>Nombre:</ion-label>
         <ion-input formControlName="nombreCliente"></ion-input>
@@ -31,10 +31,10 @@
       </ion-item>
       <ion-item>
         <label>Company:</label>
-        <ion-input formControlName="company"></ion-input>
+        <ion-input formControlName="company" ></ion-input>
       </ion-item>
    </form>
    <p class="ion-text-center">
-     <ion-button type="submit" [disabled]="!cliente.valid" (click)="guardarDatos()">Crear</ion-button>
+     <ion-button type="submit" [disabled]="!formCliente.valid" (click)="guardarDatos()">Editar</ion-button>
    </p>
   </ion-content>

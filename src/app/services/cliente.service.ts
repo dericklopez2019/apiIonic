@@ -8,6 +8,9 @@ import { Cliente } from '../models/cliente.model';
   providedIn: 'root'
 })
 export class ClienteService {
+  mostrar() {
+    throw new Error('Method not implemented.');
+  }
 
   private urlListar:string;
   private urlGuardar:string;
