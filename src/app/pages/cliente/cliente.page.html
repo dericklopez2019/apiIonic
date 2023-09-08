@@ -1,0 +1,47 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>cliente</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-button color="secondary" (click)="goToInicio()">Inicio</ion-button>
+  <ion-list>
+    <ion-item>
+      <ion-input label="Nombre" [(ngModel)]="nombre"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input label="Email" [(ngModel)]="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input label="Telefono" [(ngModel)]="telefono"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input label="Direccion" [(ngModel)]="direccion"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input label="Company" [(ngModel)]="company"></ion-input>
+    </ion-item>
+  </ion-list>
+  <ion-button color="secondary" (click) ="mostrar()" >Crear</ion-button>
+  <ion-button color="secondary" (click)="editarGuardar()" >Editar</ion-button>
+
+  <ion-item>Listado de Clientes</ion-item>
+
+  <ion-card *ngFor="let item of clientes">
+    <ion-card-header> 
+      <ion-card-title>{{item.nombreCliente}}</ion-card-title>
+      <ion-card-subtitle>{{item.telefono}}</ion-card-subtitle>
+      <ion-card-subtitle>{{item.email}}</ion-card-subtitle>
+      <ion-card-subtitle>{{item.company}}</ion-card-subtitle>
+
+    </ion-card-header>
+  
+    <ion-card-content>
+      {{item.direccion}}
+    </ion-card-content>
+    <ion-button color="primary"  (click)="goCliente(item)" >Editar</ion-button>
+  <ion-button color="danger" (click)="eliminar(item.id)">Eliminar</ion-button>
+
+  </ion-card>
+</ion-content>
